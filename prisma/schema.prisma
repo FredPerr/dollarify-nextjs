@@ -9,3 +9,61 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model user {
+  id           String         @id @unique @default(cuid())
+  createdOn    DateTime       @default(now())
+  email        String         @unique
+  updatedOn    DateTime       @default(now())
+  password     String?
+  salt         String?
+  account      account[]
+  notification notification[]
+}
+
+model transaction_stock {
+  id         String    @id @unique @default(cuid())
+  quantity   Int
+  ticker     String
+  executedOn DateTime? @default(now())
+  unitPrice  Float
+  fees       Float
+  orderTotal Float
+  currency   Int
+  account    account   @relation(fields: [accountId], references: [id])
+  accountId  String
+}
+
+model transaction_crypto {
+  id         String   @id @unique @default(cuid())
+  quantity   Float
+  coin_tag   String
+  executedOn DateTime @default(now())
+  unitPrice  Float
+  fees       Float
+  orderTotal Float
+  currency   String
+  account    account  @relation(fields: [accountId], references: [id])
+  accountId  String
+}
+
+model account {
+  id                 String               @id @unique @default(cuid())
+  owner              user                 @relation(fields: [userId], references: [id])
+  createdOn          DateTime             @default(now())
+  updatedOn          DateTime             @default(now())
+  transaction_stock  transaction_stock[]
+  transaction_crypto transaction_crypto[]
+  userId             String
+}
+
+model notification {
+  id        String   @id @unique @default(cuid())
+  type      Int
+  title     String
+  desc      String
+  seen      Boolean  @default(false)
+  createdOn DateTime @default(now())
+  target    user?    @relation(fields: [userId], references: [id])
+  userId    String?
+}
