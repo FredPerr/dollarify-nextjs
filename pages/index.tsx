@@ -3,6 +3,7 @@ import { ReactElement } from 'react'
 import { NextPageWithLayout } from 'layouts'
 import { Button } from '@/components/common/button/'
 import { AnchorText } from '@/components/common/anchor'
+import { AnchorButton } from '@/components/common/anchor'
 
 
 const Home: NextPageWithLayout = () => {
@@ -12,7 +13,8 @@ const Home: NextPageWithLayout = () => {
       <Button color="info">test</Button>
       <Button color="primary">test</Button>
       <Button color="secondary">test</Button>
-      <AnchorText href="/test" text="Do ut et commodo eiusmod."/>
+      <AnchorText href="/test" content="Do ut et commodo eiusmod."/>
+      <AnchorButton variant="contained" href="/test" content="Do ut et commodo eiusmod."/>
     </>
   )
 }

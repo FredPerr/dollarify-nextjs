@@ -1,1 +1,2 @@
-export { AnchorText } from './anchor'
+export { AnchorText } from './text'
+export { AnchorButton } from './button'
