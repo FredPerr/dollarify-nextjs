@@ -1,7 +1,7 @@
 
-import { Typography } from "@mui/material"
+import { Typography, TypographyProps } from "@mui/material"
 import React from "react"
-import { MUIStyledCommonProps, styled } from "@mui/system"
+import { MUIStyledCommonProps, styled, SxProps } from "@mui/system"
 
 
 const StyledText = styled(Typography)(({ theme }) => ({
@@ -9,8 +9,8 @@ const StyledText = styled(Typography)(({ theme }) => ({
 }))
 
 
-interface StyledTextProps extends MUIStyledCommonProps {
-    children: React.ReactNode,
+interface StyledTextProps extends TypographyProps, Omit<MUIStyledCommonProps, 'sx'> {
+    sx?: SxProps,
 }
 
 

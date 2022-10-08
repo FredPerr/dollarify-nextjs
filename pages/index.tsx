@@ -20,7 +20,8 @@ const Home: NextPageWithLayout = () => {
       <AnchorButton variant="contained" href="/test" content="Do ut et commodo eiusmod."/>
       <Box variant='filled'><Typography>TEST</Typography></Box>
       <Box variant='outlined'><Typography>TEST</Typography></Box>
-      <Text>Test</Text>
+      <Text variant="h4">Test</Text>
+      <Text variant="overline">Test</Text>
     </>
   )
 }
