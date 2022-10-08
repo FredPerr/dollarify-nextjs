@@ -1,0 +1,1 @@
+export { SquareLogo, NameLogo } from "./logo"
