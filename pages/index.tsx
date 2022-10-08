@@ -4,6 +4,8 @@ import { NextPageWithLayout } from 'layouts'
 import { Button } from '@/components/common/button/'
 import { AnchorText } from '@/components/common/anchor'
 import { AnchorButton } from '@/components/common/anchor'
+import { Box } from '@/components/common/box'
+import { Typography } from '@mui/material'
 
 
 const Home: NextPageWithLayout = () => {
@@ -15,6 +17,8 @@ const Home: NextPageWithLayout = () => {
       <Button color="secondary">test</Button>
       <AnchorText href="/test" content="Do ut et commodo eiusmod."/>
       <AnchorButton variant="contained" href="/test" content="Do ut et commodo eiusmod."/>
+      <Box variant='filled'><Typography>TEST</Typography></Box>
+      <Box variant='outlined'><Typography>TEST</Typography></Box>
     </>
   )
 }

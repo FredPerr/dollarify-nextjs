@@ -36,6 +36,9 @@ const defaultTheme = createTheme({
             xl: 1920
         },
     },
+    shape: {
+        borderRadius: 4,
+    }
 })
 
 export default defaultTheme;
