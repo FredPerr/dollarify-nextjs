@@ -7,6 +7,7 @@ import { AnchorButton } from '@/components/common/anchor'
 import { Box } from '@/components/common/box'
 import { Typography } from '@mui/material'
 import { Text } from '@/components/common/text'
+import { NameLogo, SquareLogo } from '@/components/logo'
 
 
 // TODO: Remove the sketch page in production or when not necessary anymore.
@@ -23,7 +24,9 @@ const SketchPage: NextPageWithLayout = () => {
       <Box variant='filled'><Typography>TEST</Typography></Box>
       <Box variant='outlined'><Typography>TEST</Typography></Box>
       <Text variant="h4">Test</Text>
-      <Text variant="overline">Test</Text>
+      <Text variant="subtitle1">Test</Text>
+      <NameLogo width={300} height={300}/>
+      <SquareLogo width={100} height={100}/>
     </>
   )
 }
