@@ -1,4 +1,4 @@
-import { Box as MuiBox, BoxProps, useTheme } from "@mui/material"
+import { Box as MuiBox, BoxProps } from "@mui/material"
 import React from "react"
 import { MUIStyledCommonProps, styled } from "@mui/system"
 
