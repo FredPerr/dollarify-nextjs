@@ -18,4 +18,6 @@ ErrorPage.getLayout = function getLayout(page: ReactElement) {
     )
 }
 
+export default ErrorPage;
+
 // TODO: Add the error page with its layout.

@@ -18,4 +18,6 @@ ServerErrorPage.getLayout = function getLayout(page: ReactElement) {
     )
 }
 
+export default ServerErrorPage
+
 // TODO: Add the 500 error page with its layout.
