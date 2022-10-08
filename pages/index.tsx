@@ -4,11 +4,7 @@ import { NextPageWithLayout } from 'layouts'
 
 
 const Home: NextPageWithLayout = () => {
-  return (
-    <>
-      
-    </>
-  )
+  return (<></>)
 }
 
 
