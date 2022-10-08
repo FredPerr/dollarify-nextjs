@@ -1,4 +1,3 @@
-import { UrlObject } from "url"
 import { Anchor } from "../common/anchor"
 import LogoNameColorSvg from "@/public/images/logos/name-color.svg?url"
 import LogoNameContrastSvg from "@/public/images/logos/name-contrast.svg?url"
@@ -15,17 +14,17 @@ interface SquareLogoProps extends Omit<ImageProps, 'src'> {
 
 const SquareLogo = ({ href, contrast, ...props }: SquareLogoProps) => {
     return (
-        <Anchor enabled={Boolean(href)} href={href ? href: ""}>
-            <Image src={contrast ? LogoSquareContrastSvg: LogoSquareColorSvg} {...props} />
+        <Anchor enabled={Boolean(href)} href={href ? href : ""}>
+            <Image src={contrast ? LogoSquareContrastSvg : LogoSquareColorSvg} {...props} />
         </Anchor>
     )
 }
 
 const NameLogo = ({ href, contrast, ...props }: SquareLogoProps) => {
     return (
-        <Anchor enabled={Boolean(href)} href={href ? href: ""}>
-            <Image src={contrast ? LogoNameContrastSvg: LogoNameColorSvg} {...props} />
-        </Anchor>
+            <Anchor enabled={Boolean(href)} href={href ? href : ""}>
+                <Image src={contrast ? LogoNameContrastSvg : LogoNameColorSvg} {...props} />
+            </Anchor>
     )
 }
 
