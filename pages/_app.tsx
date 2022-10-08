@@ -7,6 +7,7 @@ import type { AppProps } from 'next/app'
 import { emotionCache } from 'pages/_document';
 import type { NextPageWithLayout } from 'layouts';
 import { NextComponentType } from 'next';
+import { ServerRouter } from 'server/router';
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
@@ -24,26 +25,13 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   )
 }
 
-export default withTRPC<AppRouter>({
+export default withTRPC<ServerRouter>({
   config({ ctx }) {
-    /**
-     * If you want to use SSR, you need to use the server's full URL
-     * @link https://trpc.io/docs/ssr
-     */
     const url = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/api/trpc`
       : 'http://localhost:3000/api/trpc';
-    return {
-      url,
-      /**
-       * @link https://react-query.tanstack.com/reference/QueryClient
-       */
-      // queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
-    };
+    return {url};
   },
-  /**
-   * @link https://trpc.io/docs/ssr
-   */
   ssr: true,
 })(MyApp as NextComponentType);
 
